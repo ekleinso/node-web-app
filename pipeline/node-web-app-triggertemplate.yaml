@@ -75,11 +75,11 @@ metadata:
 spec:
   serviceAccountName: pipeline
   triggers:
-  - name: node-trigger
-    bindings:
-      - ref: node-web-app-tb
-    template:
-      ref: node-web-app-tt
+    - name: node-trigger
+      bindings:
+        - ref: node-web-app-tb
+      template:
+        ref: node-web-app-tt
 
 ---
 
