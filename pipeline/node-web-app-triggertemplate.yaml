@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
   name: node-web-app-tt
@@ -53,7 +53,7 @@ spec:
 
 --- 
 
-apiVersion: tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   name: node-web-app-tb
@@ -68,7 +68,7 @@ spec:
 
 ---
 
-apiVersion: tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: EventListener
 metadata:
   name: node-web-app-el
@@ -88,7 +88,6 @@ metadata:
   name: el-node-web-app
   namespace: node-web-project
 spec:
-  host: el-node-web-app.apps.roly-ocp43-cluster.roly-ocp.com
   to:
     kind: Service
     name: el-node-web-app-el
