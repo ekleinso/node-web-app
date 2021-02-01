@@ -5,9 +5,12 @@ metadata:
 spec:
   params: 
   - name: git-repo-url
-    default: master
+    value: 'https://github.com/ekleinso/node-web-app.git'
+  - name: git-revision
+    value: master
   - name: git-repo-name
   - name: git-revision
+    value: master
   resourcetemplates:
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
@@ -20,8 +23,6 @@ spec:
         value: $(params.git-repo-url)
       - name: revision
         value: $(params.git-revision)
-      - name: git-repo-name
-        value: $(params.git-repo-name)
       type: git
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
