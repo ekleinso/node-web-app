@@ -12,7 +12,7 @@ spec:
   tasks:
     - name: build-and-publish-image
       params:
-        - name: IMAGE
+        - name: BUILDER_IMAGE
           value: 'quay.io/buildah/stable:v1.11.0'
         - name: DOCKERFILE
           value: ./Dockerfile
@@ -27,5 +27,5 @@ spec:
             resource: node-web-app-image
       taskRef:
         kind: ClusterTask
-        name: buildah
+        name: buildah-pr
     
