@@ -9,8 +9,6 @@ spec:
   - name: git-revision
     value: master
   - name: git-repo-name
-  - name: git-revision
-    value: master
   resourcetemplates:
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
