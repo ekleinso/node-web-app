@@ -28,4 +28,17 @@ spec:
       taskRef:
         kind: ClusterTask
         name: buildah-pr
+    - name: argocd-sync-deployment
+      params:
+        - name: application-name
+          value: node-web-app
+        - name: flags
+          value: '--insecure'
+        - name: argocd-version
+          value: v1.7.7
+      runAfter:
+        - build-and-publish-image
+      taskRef:
+        kind: Task
+        name: argocd-task-sync-and-wait 
     
