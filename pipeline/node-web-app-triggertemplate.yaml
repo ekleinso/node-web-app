@@ -18,9 +18,9 @@ spec:
     spec:
       params:
       - name: url
-        value: $(params.git-repo-url)
+        value: 'https://github.com/ekleinso/node-web-app.git'
       - name: revision
-        value: $(params.git-revision)
+        value: master
       type: git
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
