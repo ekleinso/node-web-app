@@ -79,7 +79,7 @@ spec:
       bindings:
         - ref: node-web-app-tb
       template:
-        ref: node-web-app-tt
+        name: node-web-app-tt
 
 ---
 
