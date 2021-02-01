@@ -12,7 +12,7 @@ spec:
   tasks:
     - name: build-and-publish-image
       params:
-        - name: BUILDER_IMAGE
+        - name: IMAGE
           value: 'quay.io/buildah/stable:v1.11.0'
         - name: DOCKERFILE
           value: ./Dockerfile
