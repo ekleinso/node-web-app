@@ -109,6 +109,35 @@ There are a few ways to install argocd into a Kubernetes Cluster.  We used the A
 
 For this tutorial, I used [the Console Install](https://argocd-operator.readthedocs.io/en/latest/install/openshift/) using the Argo CD Operator on OpenShift.  
 
+Create an instance of argocd
+```
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+  labels:
+    example: route
+spec:
+  grafana:
+    enabled: true
+    route:
+      enabled: true
+  prometheus:
+    enabled: true
+    route:
+      enabled: true
+  server:
+    route:
+      enabled: true
+```
+
+Add cluster config to argocd
+```
+oc config get-contexts -o name
+argocd login emk-argocd-server-argocd.emk-roks-a-b544ee885c1ce6ec431413e537b59576-0000.us-east.containers.appdomain.cloud
+argocd cluster add argocd/c109-e-us-east-containers-cloud-ibm-com:31341/system:admin
+```
+
 ### Install OpenShift Pipeline Operator 
 
 OpenShift delivers a preview of tekton through the OpenShift Pipeline Operator.  We used the OpenShift Pipeline Operator.  
@@ -150,6 +179,10 @@ CAUTION !!!!! the .gitigonore file contains the name of this yaml file to avoid 
 ![alt git-ignore](images/gitignore.png)
 
 In the newly created file, replace the value for ARGOCD_SERVER to your server.  Either enter your ARGOCD_AUTH_TOKEN or User and Password Base 64 encoded.  
+Import file into the node-web-project namespace
+```
+oc apply -n node-web-project -f node-web-app-argocdsecret.yaml
+```
 
 ![alt argo-secret](images/argosecret.png)
 
