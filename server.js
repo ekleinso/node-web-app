@@ -4,15 +4,15 @@ const express = require('express');
 
 
 // Constants
-const port = process.env.PORT || "8080";
-const host = process.env.HOST || "0.0.0.0";
-const version = process.env.VERSION || "1.1";
+const PORT = process.env.PORT || "8080";
+const HOST = process.env.HOST || "0.0.0.0";
+const VERSION = process.env.VERSION || "1.1";
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello Eric !!!!!!!  VERSION ${version} ');
+  res.send("Hello Eric !!!!!!!  VERSION ${VERSION} ");
 });
 
-app.listen(port, host);
-console.log('Running on http://${host}:${port}');
+app.listen(PORT, HOST);
+console.log("Running on http://${HOST}:${PORT}");
