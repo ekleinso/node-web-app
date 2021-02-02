@@ -11,7 +11,7 @@ const VERSION = process.env.VERSION || "1.2";
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send("Hello Eric !!!!!!!  VERSION " + VERSION);
+  res.send("Hello KDC !!!!!!!  VERSION " + VERSION);
 });
 
 app.listen(PORT, HOST);
