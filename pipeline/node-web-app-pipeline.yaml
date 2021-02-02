@@ -39,6 +39,6 @@ spec:
       runAfter:
         - build-and-publish-image
       taskRef:
-        kind: Task
+        kind: ClusterTask
         name: argocd-task-sync-and-wait 
     
